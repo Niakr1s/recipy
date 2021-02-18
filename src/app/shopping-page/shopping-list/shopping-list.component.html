@@ -5,10 +5,7 @@
     <ul class="list-group">
       <ng-container *ngFor="let ingridient of recipe.ingridients">
         <li class="list-group-item" *ngIf="ingridient.isInCart">
-          <span>
-            {{ ingridient.name }}
-          </span>
-          <span> {{ ingridient.amount }} {{ ingridient.measurement }} </span>
+          <app-ingridient [ingridient]="ingridient"></app-ingridient>
         </li>
       </ng-container>
     </ul>
