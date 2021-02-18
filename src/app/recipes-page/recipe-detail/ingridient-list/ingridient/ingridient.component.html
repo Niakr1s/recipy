@@ -8,10 +8,11 @@
   <span
     class="label label-success"
     *ngIf="ingridient.isInCart; else addToCart"
+    (click)="ingridient.removeFromCart()"
   >
     in cart
   </span>
   <ng-template #addToCart>
-    <span class="label label-default"> to cart </span>
+    <span class="label label-default" (click)="ingridient.addToCart()"> to cart </span>
   </ng-template>
 </div>

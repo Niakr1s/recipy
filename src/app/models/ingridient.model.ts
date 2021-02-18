@@ -25,4 +25,12 @@ export class Ingridient {
   setRecipeId(recipeId: number): void {
     this.recipeId = recipeId;
   }
+
+  addToCart(): void {
+    this.isInCart = true;
+  }
+
+  removeFromCart(): void {
+    this.isInCart = false;
+  }
 }
