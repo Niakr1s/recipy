@@ -1,4 +1,4 @@
-import { Ingridient } from '../shared/ingridient.model';
+import { Ingridient } from './ingridient.model';
 
 export class Recipe {
   private static nextId = 0;
