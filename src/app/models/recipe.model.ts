@@ -17,4 +17,8 @@ export class Recipe {
     this.ingridients = ingridients;
     this.ingridients.forEach((ingridient) => ingridient.setRecipeId(this.id));
   }
+
+  ingridientsInCart(): Ingridient[] {
+    return this.ingridients.filter((ingridient) => ingridient.isInCart);
+  }
 }

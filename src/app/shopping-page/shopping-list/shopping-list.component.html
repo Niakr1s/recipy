@@ -1,14 +1,17 @@
 <h2>Shopping list</h2>
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let recipe of recipesService.recipies">
-    <p>{{ recipe.name }}</p>
-    <ul class="list-group">
-      <ng-container *ngFor="let ingridient of recipe.ingridients">
-        <li class="list-group-item" *ngIf="ingridient.isInCart">
-          <app-ingridient [ingridient]="ingridient"></app-ingridient>
-        </li>
-      </ng-container>
-    </ul>
-  </li>
+  <ng-container *ngFor="let recipe of recipesService.recipies">
+    <ng-container></ng-container>
+    <li class="list-group-item" *ngIf="recipe.ingridientsInCart().length > 0">
+      <p>{{ recipe.name }}</p>
+      <ul class="list-group">
+        <ng-container *ngFor="let ingridient of recipe.ingridients">
+          <li class="list-group-item" *ngIf="ingridient.isInCart">
+            <app-ingridient [ingridient]="ingridient"></app-ingridient>
+          </li>
+        </ng-container>
+      </ul>
+    </li>
+  </ng-container>
 </ul>
 <app-shopping-list-edit></app-shopping-list-edit>
