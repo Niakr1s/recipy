@@ -10,16 +10,16 @@ export class Ingridient {
   amount: number;
   measurement: Measurement;
 
-  isInShoppingList: boolean;
+  isInCart: boolean;
   private recipeId!: number;
 
-  constructor({ name, amount, measurement, isInShoppingList }:
-    Pick<Ingridient, 'name' | 'amount' | 'measurement'> & Partial<Pick<Ingridient, 'isInShoppingList'>>
+  constructor({ name, amount, measurement, isInCart }:
+    Pick<Ingridient, 'name' | 'amount' | 'measurement'> & Partial<Pick<Ingridient, 'isInCart'>>
   ) {
     this.name = name;
     this.amount = amount;
     this.measurement = measurement;
-    this.isInShoppingList = !!isInShoppingList;
+    this.isInCart = !!isInCart;
   }
 
   setRecipeId(recipeId: number): void {
