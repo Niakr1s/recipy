@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Ingridient } from '../ingridient.model';
+import { Ingridient } from '../../shared/ingridient.model';
 import { Recipe } from '../recipe.model';
 
 @Component({

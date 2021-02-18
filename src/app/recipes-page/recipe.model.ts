@@ -1,4 +1,4 @@
-import { Ingridient } from './ingridient.model';
+import { Ingridient } from '../shared/ingridient.model';
 
 export class Recipe {
   name: string;
