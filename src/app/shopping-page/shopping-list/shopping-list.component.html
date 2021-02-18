@@ -1,9 +1,17 @@
 <h2>Shopping list</h2>
 <ul class="list-group">
-  <li class="list-group-item">Milk</li>
-  <li class="list-group-item">Cheese</li>
-  <li class="list-group-item">Meat</li>
-  <li class="list-group-item">Eggs</li>
-  <li class="list-group-item">Beer</li>
+  <li class="list-group-item" *ngFor="let recipe of recipesService.recipies">
+    <p>{{ recipe.name }}</p>
+    <ul class="list-group">
+      <ng-container *ngFor="let ingridient of recipe.ingridients">
+        <li class="list-group-item" *ngIf="ingridient.isInShoppingList">
+          <span>
+            {{ ingridient.name }}
+          </span>
+          <span> {{ ingridient.amount }} {{ ingridient.measurement }} </span>
+        </li>
+      </ng-container>
+    </ul>
+  </li>
 </ul>
 <app-shopping-list-edit></app-shopping-list-edit>
