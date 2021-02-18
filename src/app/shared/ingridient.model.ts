@@ -1,3 +1,4 @@
+
 export const WeightMeasurements = ['g', 'Kg'] as const;
 export const VolumeMeasurements = ['ml', 'L'] as const;
 export const CountMeasurements = ['pc'] as const;
@@ -9,9 +10,19 @@ export class Ingridient {
   amount: number;
   measurement: Measurement;
 
-  constructor({ name, amount, measurement }: Pick<Ingridient, 'name' | 'amount' | 'measurement'>) {
+  isInShoppingList: boolean;
+  private recipeId!: number;
+
+  constructor({ name, amount, measurement, isInShoppingList }:
+    Pick<Ingridient, 'name' | 'amount' | 'measurement'> & Partial<Pick<Ingridient, 'isInShoppingList'>>
+  ) {
     this.name = name;
     this.amount = amount;
     this.measurement = measurement;
+    this.isInShoppingList = !!isInShoppingList;
+  }
+
+  setRecipeId(recipeId: number): void {
+    this.recipeId = recipeId;
   }
 }
