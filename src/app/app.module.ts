@@ -12,7 +12,7 @@ import { RecipesComponent } from './recipes-page/recipes-page.component';
 import { ShoppingComponent } from './shopping-page/shopping-page.component';
 import { NoRecipeDetailComponent } from './recipes-page/recipe-detail/no-recipe-detail/no-recipe-detail.component';
 import { IngridientListComponent } from './recipes-page/recipe-detail/ingridient-list/ingridient-list.component';
-import { IngridientComponent } from './recipes-page/recipe-detail/ingridient-list/ingridient/ingridient.component';
+import { IngridientComponent } from './shared/components/ingridient/ingridient.component';
 
 @NgModule({
   declarations: [
