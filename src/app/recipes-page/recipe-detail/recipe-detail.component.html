@@ -23,9 +23,14 @@
   <div class="col-xs-12">
     <h2>Ingridients</h2>
     <ul class="list-group">
-      <li class="list-group-item">One</li>
-      <li class="list-group-item">Two</li>
-      <li class="list-group-item">Three</li>
+      <li class="list-group-item" *ngFor="let ingridient of recipe.ingridients">
+        <span>
+          {{ ingridient.name }}
+        </span>
+        <span class="pull-right">
+          {{ ingridient.amount }} {{ ingridient.measurement }}
+        </span>
+      </li>
     </ul>
   </div>
 </div>
