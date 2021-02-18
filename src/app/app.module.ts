@@ -11,6 +11,8 @@ import { RecipeDetailComponent } from './recipes-page/recipe-detail/recipe-detai
 import { RecipesComponent } from './recipes-page/recipes-page.component';
 import { ShoppingComponent } from './shopping-page/shopping-page.component';
 import { NoRecipeDetailComponent } from './recipes-page/recipe-detail/no-recipe-detail/no-recipe-detail.component';
+import { IngridientListComponent } from './recipes-page/recipe-detail/ingridient-list/ingridient-list.component';
+import { IngridientComponent } from './recipes-page/recipe-detail/ingridient-list/ingridient/ingridient.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { NoRecipeDetailComponent } from './recipes-page/recipe-detail/no-recipe-
     RecipeDetailComponent,
     RecipesComponent,
     ShoppingComponent,
-    NoRecipeDetailComponent
+    NoRecipeDetailComponent,
+    IngridientListComponent,
+    IngridientComponent
   ],
   imports: [
     BrowserModule,

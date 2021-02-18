@@ -19,18 +19,4 @@
     <img class="img-responsive" [srcset]="recipe.imagePath" />
   </div>
 </div>
-<div class="row">
-  <div class="col-xs-12">
-    <h2>Ingridients</h2>
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let ingridient of recipe.ingridients">
-        <span>
-          {{ ingridient.name }}
-        </span>
-        <span class="pull-right">
-          {{ ingridient.amount }} {{ ingridient.measurement }}
-        </span>
-      </li>
-    </ul>
-  </div>
-</div>
+<app-ingridient-list [ingridients]="recipe.ingridients"></app-ingridient-list>
