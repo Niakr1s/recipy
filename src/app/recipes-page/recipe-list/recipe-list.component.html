@@ -1,4 +1,10 @@
-<h2>Recipe list</h2>
+<h2>
+  <span> Recipe list </span>
+  <button
+    class="btn btn-default pull-right glyphicon glyphicon-plus"
+    title="New recipe"
+  ></button>
+</h2>
 <ul class="list-group">
   <li
     class="list-group-item"
@@ -6,8 +12,6 @@
     [ngClass]="{ selected: selectedRecipe === recipe }"
     (click)="selectRecipe(recipe)"
   >
-    <app-recipe-item
-      [recipe]="recipe"
-    ></app-recipe-item>
+    <app-recipe-item [recipe]="recipe"></app-recipe-item>
   </li>
 </ul>
