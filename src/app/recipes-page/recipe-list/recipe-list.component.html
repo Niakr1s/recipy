@@ -1,15 +1,13 @@
 <h2>Recipe list</h2>
 <ul class="list-group">
-  <li class="list-group-item">
-    <app-recipe-item></app-recipe-item>
-  </li>
-  <li class="list-group-item">
-    <app-recipe-item></app-recipe-item>
-  </li>
-  <li class="list-group-item">
-    <app-recipe-item></app-recipe-item>
-  </li>
-  <li class="list-group-item">
-    <app-recipe-item></app-recipe-item>
+  <li
+    class="list-group-item"
+    *ngFor="let recipe of recipies"
+    [ngClass]="{ selected: selectedRecipe === recipe }"
+    (click)="selectRecipe(recipe)"
+  >
+    <app-recipe-item
+      [recipe]="recipe"
+    ></app-recipe-item>
   </li>
 </ul>

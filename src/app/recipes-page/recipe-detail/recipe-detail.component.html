@@ -1,13 +1,3 @@
-<h2>Recipe detail</h2>
-
-<p>Beautiful flauvored yakisoba</p>
-
-<h4>Steps</h4>
-<ul class="list-group">
-  <ul class="list-group-item">
-    Cook
-  </ul>
-  <ul class="list-group-item">
-    Eat
-  </ul>
-</ul>
+<h2>{{ recipe.name }}</h2>
+<img class="img-responsive" [srcset]="recipe.imagePath" />
+<p>{{ recipe.detail }}</p>

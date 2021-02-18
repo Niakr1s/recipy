@@ -1,10 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      <app-recipe-list></app-recipe-list>
+      <app-recipe-list
+        (recipeSelectedEvent)="setCurrentRecipe($event)"
+      ></app-recipe-list>
     </div>
     <div class="col-md-8">
-      <app-recipe-detail></app-recipe-detail>
+      <app-recipe-detail
+        *ngIf="currentRecipe; else noRecipe"
+        [recipe]="currentRecipe"
+      ></app-recipe-detail>
+      <ng-template #noRecipe>
+        <app-no-recipe-detail></app-no-recipe-detail>
+      </ng-template>
     </div>
   </div>
 </div>
