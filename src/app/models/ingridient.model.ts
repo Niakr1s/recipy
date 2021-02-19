@@ -1,9 +1,6 @@
+export const Measurements = ['g', 'Kg', 'ml', 'L', 'pc'] as const;
 
-export const WeightMeasurements = ['g', 'Kg'] as const;
-export const VolumeMeasurements = ['ml', 'L'] as const;
-export const CountMeasurements = ['pc'] as const;
-
-export type Measurement = typeof WeightMeasurements[number] | typeof VolumeMeasurements[number] | typeof CountMeasurements[number];
+export type Measurement = typeof Measurements[number];
 
 export class Ingridient {
   name: string;
