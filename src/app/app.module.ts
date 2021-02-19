@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { IngridientInputComponent } from './recipes-page/recipe-detail/ingridient-input/ingridient-input.component';
+import { IngridientInputComponent } from './shared/components/ingridient-input/ingridient-input.component';
 import { IngridientListComponent } from './recipes-page/recipe-detail/ingridient-list/ingridient-list.component';
 import { NoRecipeDetailComponent } from './recipes-page/recipe-detail/no-recipe-detail/no-recipe-detail.component';
 import { RecipeDetailComponent } from './recipes-page/recipe-detail/recipe-detail.component';
