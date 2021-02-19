@@ -19,7 +19,20 @@
     <img class="img-responsive" [srcset]="recipe.imagePath" />
   </div>
 </div>
-<app-ingridient-list [ingridients]="recipe.ingridients" (removeIngridient)="recipe.removeIngridient($event)"></app-ingridient-list>
 
-<span class="new-ingridient-label">New ingridient</span>
-<app-ingridient-input (ingridientOptionsSubmitted$)="recipe.addNewIngridient($event)"></app-ingridient-input>
+<app-ingridient-list
+  [ingridients]="recipe.ingridients"
+  (removeIngridient)="recipe.removeIngridient($event)"
+></app-ingridient-list>
+
+<button
+  class="btn btn-default new-ingridient-label"
+  [disabled]="isAddingNewIngridient"
+  (click)="isAddingNewIngridient = true"
+>
+  New ingridient
+</button>
+<app-ingridient-input
+  *ngIf="isAddingNewIngridient"
+  (ingridientOptionsSubmitted$)="onNewIngridientOptions($event)"
+></app-ingridient-input>
