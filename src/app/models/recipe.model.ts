@@ -1,5 +1,7 @@
 import { Ingridient, IngridientOptions } from './ingridient.model';
 
+export type EditableMembers = Pick<Recipe, 'name' | 'detail' | 'imagePath'>;
+
 export class Recipe {
   private static nextId = 0;
 
@@ -30,5 +32,11 @@ export class Recipe {
 
   removeIngridient(ingridientToDelete: Ingridient): void {
     this.ingridients = this.ingridients.filter((ingridient) => ingridient !== ingridientToDelete);
+  }
+
+  apply({ name, imagePath, detail }: EditableMembers): void {
+    this.name = name;
+    this.imagePath = imagePath;
+    this.detail = detail;
   }
 }

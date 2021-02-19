@@ -1,24 +1,4 @@
-<div class="row">
-  <div class="col-md-8">
-    <h2>
-      <span>
-        {{ recipe.name }}
-      </span>
-      <button
-        class="btn btn-default pull-right glyphicon glyphicon-edit"
-        title="Edit recipe"
-      ></button>
-      <button
-        class="btn btn-default pull-right glyphicon glyphicon-save"
-        title="Save recipe"
-      ></button>
-    </h2>
-    <p>{{ recipe.detail }}</p>
-  </div>
-  <div class="col-md-4">
-    <img class="img-responsive" [srcset]="recipe.imagePath" />
-  </div>
-</div>
+<app-recipe-info [recipe]="recipe"></app-recipe-info>
 
 <app-ingridient-list
   [ingridients]="recipe.ingridients"

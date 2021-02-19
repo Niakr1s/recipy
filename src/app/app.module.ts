@@ -15,6 +15,9 @@ import { IngridientInputComponent } from './shared/components/ingridient-input/i
 import { IngridientComponent } from './shared/components/ingridient/ingridient.component';
 import { ShoppingListComponent } from './shopping-page/shopping-list/shopping-list.component';
 import { ShoppingComponent } from './shopping-page/shopping-page.component';
+import { RecipeInfoComponent } from './recipes-page/recipe-detail/recipe-info/recipe-info.component';
+import { RecipeInfoEditComponent } from './recipes-page/recipe-detail/recipe-info/recipe-info-edit/recipe-info-edit.component';
+import { RecipeInfoViewComponent } from './recipes-page/recipe-detail/recipe-info/recipe-info-view/recipe-info-view.component';
 
 
 const appRoutes: Routes = [
@@ -37,7 +40,10 @@ const appRoutes: Routes = [
     IngridientListComponent,
     IngridientComponent,
     IngridientInputComponent,
-    IngridientListItemComponent
+    IngridientListItemComponent,
+    RecipeInfoComponent,
+    RecipeInfoEditComponent,
+    RecipeInfoViewComponent
   ],
   imports: [
     BrowserModule,

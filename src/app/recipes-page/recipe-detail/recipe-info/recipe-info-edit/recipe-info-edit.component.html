@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-8">
+    <h2>
+      <span>Editing {{ recipeName }}</span>
+      <button
+        class="btn btn-default glyphicon glyphicon-save pull-right"
+        title="Save recipe"
+        (click)="onStopEdit()"
+      ></button>
+    </h2>
+    <input class="form-control" [(ngModel)]="recipeEditableMembers.name" />
+    <textarea
+      class="form-control"
+      rows="5"
+      [(ngModel)]="recipeEditableMembers.detail"
+    ></textarea>
+  </div>
+  <div class="col-md-4">
+    <textarea
+      class="form-control"
+      rows="10"
+      type="textarea"
+      [(ngModel)]="recipeEditableMembers.imagePath"
+    ></textarea>
+  </div>
+</div>

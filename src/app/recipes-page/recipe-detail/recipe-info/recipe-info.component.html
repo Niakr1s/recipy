@@ -1,0 +1,14 @@
+<app-recipe-info-view
+  *ngIf="!isEditing"
+  [recipe]="recipe"
+  (startEdit$)="onStartEdit()"
+></app-recipe-info-view>
+<app-recipe-info-edit
+  *ngIf="isEditing"
+  [recipeEditableMembers]="{
+    name: recipe.name,
+    detail: recipe.detail,
+    imagePath: recipe.imagePath
+  }"
+  (stopEdit$)="onStopEdit($event)"
+></app-recipe-info-edit>
