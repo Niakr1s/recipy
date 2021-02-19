@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipesService } from 'src/app/services/recipes.service';
+import { RecipesService } from 'src/app/shared/services/recipes.service';
 
 @Component({
   selector: 'app-shopping-list',
