@@ -12,7 +12,6 @@ import { RecipeListComponent } from './recipes-page/recipe-list/recipe-list.comp
 import { RecipesComponent } from './recipes-page/recipes-page.component';
 import { IngridientInputComponent } from './shared/components/ingridient-input/ingridient-input.component';
 import { IngridientComponent } from './shared/components/ingridient/ingridient.component';
-import { ShoppingListEditComponent } from './shopping-page/shopping-list/shopping-list-edit/shopping-list-edit.component';
 import { ShoppingListComponent } from './shopping-page/shopping-list/shopping-list.component';
 import { ShoppingComponent } from './shopping-page/shopping-page.component';
 
@@ -22,7 +21,6 @@ import { ShoppingComponent } from './shopping-page/shopping-page.component';
     AppComponent,
     HeaderComponent,
     ShoppingListComponent,
-    ShoppingListEditComponent,
     RecipeListComponent,
     RecipeItemComponent,
     RecipeDetailComponent,
