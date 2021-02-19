@@ -19,7 +19,7 @@
     <img class="img-responsive" [srcset]="recipe.imagePath" />
   </div>
 </div>
-<app-ingridient-list [ingridients]="recipe.ingridients"></app-ingridient-list>
+<app-ingridient-list [ingridients]="recipe.ingridients" (removeIngridient)="recipe.removeIngridient($event)"></app-ingridient-list>
 
 <p>Add new ingridient</p>
 <app-ingridient-input (ingridientOptionsSubmitted$)="recipe.addNewIngridient($event)"></app-ingridient-input>

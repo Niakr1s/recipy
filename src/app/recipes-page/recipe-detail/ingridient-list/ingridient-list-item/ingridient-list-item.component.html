@@ -4,6 +4,10 @@
 </ng-container>
 
 <ng-container *ngIf="isEditing">
+  <span
+    class="glyphicon glyphicon-remove pointer"
+    (click)="removeIngridient.next()"
+  ></span>
   <app-ingridient-input
     [buttonName]="'Save'"
     [currentIngridientOptions]="{

@@ -3,7 +3,7 @@
     <h2>Ingridients</h2>
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let ingridient of ingridients">
-        <app-ingridient-list-item [ingridient]="ingridient"></app-ingridient-list-item>
+        <app-ingridient-list-item [ingridient]="ingridient" (removeIngridient)="removeIngridient.next(ingridient)"></app-ingridient-list-item>
       </li>
     </ul>
   </div>

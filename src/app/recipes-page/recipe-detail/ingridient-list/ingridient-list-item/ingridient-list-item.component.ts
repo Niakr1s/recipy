@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Ingridient, IngridientOptions } from 'src/app/models/ingridient.model';
 
 @Component({
@@ -8,6 +8,8 @@ import { Ingridient, IngridientOptions } from 'src/app/models/ingridient.model';
 })
 export class IngridientListItemComponent implements OnInit {
   @Input() ingridient!: Ingridient;
+  @Output() removeIngridient: EventEmitter<void> = new EventEmitter();
+
   isEditing = false;
 
   constructor() { }

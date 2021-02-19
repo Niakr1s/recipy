@@ -27,4 +27,8 @@ export class Recipe {
     ingridient.setRecipeId(this.id);
     this.ingridients.push(ingridient);
   }
+
+  removeIngridient(ingridientToDelete: Ingridient): void {
+    this.ingridients = this.ingridients.filter((ingridient) => ingridient !== ingridientToDelete);
+  }
 }

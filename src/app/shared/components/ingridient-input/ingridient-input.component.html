@@ -1,43 +1,41 @@
-<div class="col">
-  <div class="form-inline">
-    <div class="form-group" [ngClass]="{ 'has-error': name.invalid }">
-      <input
-        class="form-control"
-        type="text"
-        required
-        placeholder="name"
-        [(ngModel)]="currentIngridientOptions.name"
-        #name="ngModel"
-      />
-    </div>
-    <div class="form-group">
-      <input
-        class="form-control"
-        type="number"
-        min="1"
-        placeholder="amount"
-        [(ngModel)]="currentIngridientOptions.amount"
-        (change)="fixCurrentIngridientOptionsAmount()"
-      />
-    </div>
-
-    <select
+<span class="form-inline">
+  <div class="form-group" [ngClass]="{ 'has-error': name.invalid }">
+    <input
       class="form-control"
-      [(ngModel)]="currentIngridientOptions.measurement"
-    >
-      <option
-        *ngFor="let measurement of availableMeasurements"
-        [value]="measurement"
-      >
-        {{ measurement }}
-      </option>
-    </select>
-    <button
-      class="btn btn-default"
-      [disabled]="name.invalid"
-      (click)="onAddIngridient()"
-    >
-      {{ buttonName }}
-    </button>
+      type="text"
+      required
+      placeholder="name"
+      [(ngModel)]="currentIngridientOptions.name"
+      #name="ngModel"
+    />
   </div>
-</div>
+  <div class="form-group">
+    <input
+      class="form-control"
+      type="number"
+      min="1"
+      placeholder="amount"
+      [(ngModel)]="currentIngridientOptions.amount"
+      (change)="fixCurrentIngridientOptionsAmount()"
+    />
+  </div>
+
+  <select
+    class="form-control"
+    [(ngModel)]="currentIngridientOptions.measurement"
+  >
+    <option
+      *ngFor="let measurement of availableMeasurements"
+      [value]="measurement"
+    >
+      {{ measurement }}
+    </option>
+  </select>
+  <button
+    class="btn btn-default"
+    [disabled]="name.invalid"
+    (click)="onAddIngridient()"
+  >
+    {{ buttonName }}
+  </button>
+</span>
