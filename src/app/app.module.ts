@@ -14,6 +14,7 @@ import { IngridientComponent } from './shared/components/ingridient/ingridient.c
 import { ShoppingListEditComponent } from './shopping-page/shopping-list/shopping-list-edit/shopping-list-edit.component';
 import { ShoppingListComponent } from './shopping-page/shopping-list/shopping-list.component';
 import { ShoppingComponent } from './shopping-page/shopping-page.component';
+import { IngridientContainerComponent } from './recipes-page/recipe-detail/ingridient-list/ingridient-container/ingridient-container.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ShoppingComponent } from './shopping-page/shopping-page.component';
     NoRecipeDetailComponent,
     IngridientListComponent,
     IngridientComponent,
-    IngridientInputComponent
+    IngridientInputComponent,
+    IngridientContainerComponent
   ],
   imports: [
     BrowserModule,

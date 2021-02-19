@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IngridientOptions, Measurements } from 'src/app/models/ingridient.model';
 
 
@@ -12,9 +12,10 @@ const newEmptyIngridientOptions = (): IngridientOptions => {
   styleUrls: ['./ingridient-input.component.css']
 })
 export class IngridientInputComponent implements OnInit {
+  @Input() currentIngridientOptions: IngridientOptions = newEmptyIngridientOptions();
+  @Input() buttonName = 'Add';
   @Output() ingridientOptionsSubmitted$: EventEmitter<IngridientOptions> = new EventEmitter();
   readonly availableMeasurements = Measurements;
-  currentIngridientOptions: IngridientOptions = newEmptyIngridientOptions();
 
   constructor() { }
 
