@@ -1,4 +1,4 @@
-import { Ingridient } from './ingridient.model';
+import { Ingridient, IngridientOptions } from './ingridient.model';
 
 export class Recipe {
   private static nextId = 0;
@@ -20,5 +20,11 @@ export class Recipe {
 
   ingridientsInCart(): Ingridient[] {
     return this.ingridients.filter((ingridient) => ingridient.isInCart);
+  }
+
+  addNewIngridient(ingridientOptions: IngridientOptions): void {
+    const ingridient = new Ingridient(ingridientOptions);
+    ingridient.setRecipeId(this.id);
+    this.ingridients.push(ingridient);
   }
 }
