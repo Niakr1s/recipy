@@ -7,8 +7,8 @@
     </div>
     <div class="col-md-8">
       <app-recipe-detail
-        *ngIf="currentRecipe; else noRecipe"
-        [recipe]="currentRecipe"
+        *ngIf="stateService.recipePageState.currentRecipe; else noRecipe"
+        [recipe]="stateService.recipePageState.currentRecipe"
       ></app-recipe-detail>
       <ng-template #noRecipe>
         <app-no-recipe-detail></app-no-recipe-detail>

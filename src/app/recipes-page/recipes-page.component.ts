@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../models/recipe.model';
+import { StateService } from '../shared/services/state.service';
 
 @Component({
   selector: 'app-recipes-page',
@@ -7,14 +8,12 @@ import { Recipe } from '../models/recipe.model';
   styleUrls: ['./recipes-page.component.css']
 })
 export class RecipesComponent implements OnInit {
-  currentRecipe?: Recipe;
-
-  constructor() { }
+  constructor(readonly stateService: StateService) { }
 
   ngOnInit(): void {
   }
 
   setCurrentRecipe(recipe: Recipe): void {
-    this.currentRecipe = recipe;
+    this.stateService.recipePageState.currentRecipe = recipe;
   }
 }
