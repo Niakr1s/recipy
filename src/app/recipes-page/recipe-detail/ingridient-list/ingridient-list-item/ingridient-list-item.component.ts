@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Ingridient, IngridientOptions } from 'src/app/models/ingridient.model';
 
 @Component({
-  selector: 'app-ingridient-container[ingridient]',
-  templateUrl: './ingridient-container.component.html',
-  styleUrls: ['./ingridient-container.component.css']
+  selector: 'app-ingridient-list-item[ingridient]',
+  templateUrl: './ingridient-list-item.component.html',
+  styleUrls: ['./ingridient-list-item.component.css']
 })
-export class IngridientContainerComponent implements OnInit {
+export class IngridientListItemComponent implements OnInit {
   @Input() ingridient!: Ingridient;
   isEditing = false;
 
