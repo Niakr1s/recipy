@@ -2,21 +2,26 @@ export const Measurements = ['g', 'Kg', 'ml', 'L', 'pc'] as const;
 
 export type Measurement = typeof Measurements[number];
 
-export type IngridientOptions = Pick<Ingridient, 'name' | 'amount' | 'measurement'> & Partial<Pick<Ingridient, 'isInCart'>>;
+export type IngridientOptions = Pick<Ingridient, 'name' | 'amount' | 'measurement'>;
 
 export class Ingridient {
   name: string;
   amount: number;
   measurement: Measurement;
 
-  isInCart: boolean;
+  isInCart = false;
   private recipeId!: number;
 
-  constructor({ name, amount, measurement, isInCart }: IngridientOptions) {
+  constructor({ name, amount, measurement }: IngridientOptions) {
     this.name = name;
     this.amount = amount;
     this.measurement = measurement;
-    this.isInCart = !!isInCart;
+  }
+
+  apply({ name, amount, measurement }: IngridientOptions): void {
+    this.name = name;
+    this.amount = amount;
+    this.measurement = measurement;
   }
 
   setRecipeId(recipeId: number): void {
