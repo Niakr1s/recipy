@@ -13,4 +13,12 @@ export class IngridientComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  onPlus(): void {
+    this.ingridient.addToCart();
+  }
+
+  onMinus(): void {
+    this.ingridient.removeFromCart();
+  }
 }

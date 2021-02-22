@@ -9,7 +9,7 @@ export class Ingridient {
   amount: number;
   measurement: Measurement;
 
-  isInCart = false;
+  inCart = 0;
   private recipeId!: number;
 
   constructor({ name, amount, measurement }: IngridientOptions) {
@@ -29,10 +29,12 @@ export class Ingridient {
   }
 
   addToCart(): void {
-    this.isInCart = true;
+    this.inCart++;
   }
 
   removeFromCart(): void {
-    this.isInCart = false;
+    if (this.inCart > 0) {
+      this.inCart--;
+    }
   }
 }

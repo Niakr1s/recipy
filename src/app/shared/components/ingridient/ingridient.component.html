@@ -2,17 +2,12 @@
   {{ ingridient.name }}
 </span>
 <div class="pull-right">
-  <span>
-    {{ ingridient.amount }} {{ ingridient.measurement }}
-  </span>
-  <span
-    class="label label-success"
-    *ngIf="ingridient.isInCart; else addToCart"
-    (click)="ingridient.removeFromCart()"
-  >
-    in cart
-  </span>
-  <ng-template #addToCart>
-    <span class="label label-default" (click)="ingridient.addToCart()"> to cart </span>
-  </ng-template>
+  <span> {{ ingridient.amount }} {{ ingridient.measurement }} </span>
+  <app-in-cart [inCart]="ingridient.inCart"></app-in-cart>
+  <app-add-remove
+    [counter]="ingridient.inCart"
+    [min]="0"
+    (plus)="onPlus()"
+    (minus)="onMinus()"
+  ></app-add-remove>
 </div>

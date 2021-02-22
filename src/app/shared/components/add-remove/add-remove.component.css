@@ -1,0 +1,16 @@
+.pointer {
+  cursor: pointer;
+}
+
+.green {
+  color: greenyellow;
+}
+
+.red {
+  color: red;
+}
+
+.disabled {
+  color: gray;
+  cursor: not-allowed;
+}

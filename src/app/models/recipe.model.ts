@@ -21,7 +21,7 @@ export class Recipe {
   }
 
   ingridientsInCart(): Ingridient[] {
-    return this.ingridients.filter((ingridient) => ingridient.isInCart);
+    return this.ingridients.filter((ingridient) => ingridient.inCart);
   }
 
   addNewIngridient(ingridientOptions: IngridientOptions): void {

@@ -18,6 +18,8 @@ import { ShoppingComponent } from './shopping-page/shopping-page.component';
 import { RecipeInfoComponent } from './recipes-page/recipe-detail/recipe-info/recipe-info.component';
 import { RecipeInfoEditComponent } from './recipes-page/recipe-detail/recipe-info/recipe-info-edit/recipe-info-edit.component';
 import { RecipeInfoViewComponent } from './recipes-page/recipe-detail/recipe-info/recipe-info-view/recipe-info-view.component';
+import { InCartComponent } from './shared/components/in-cart/in-cart.component';
+import { AddRemoveComponent } from './shared/components/add-remove/add-remove.component';
 
 
 const appRoutes: Routes = [
@@ -43,7 +45,9 @@ const appRoutes: Routes = [
     IngridientListItemComponent,
     RecipeInfoComponent,
     RecipeInfoEditComponent,
-    RecipeInfoViewComponent
+    RecipeInfoViewComponent,
+    InCartComponent,
+    AddRemoveComponent
   ],
   imports: [
     BrowserModule,

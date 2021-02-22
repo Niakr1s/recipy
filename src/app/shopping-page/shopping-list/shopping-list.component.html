@@ -6,7 +6,7 @@
       <p>{{ recipe.name }}</p>
       <ul class="list-group">
         <ng-container *ngFor="let ingridient of recipe.ingridients">
-          <li class="list-group-item" *ngIf="ingridient.isInCart">
+          <li class="list-group-item" *ngIf="ingridient.inCart">
             <app-ingridient [ingridient]="ingridient"></app-ingridient>
           </li>
         </ng-container>

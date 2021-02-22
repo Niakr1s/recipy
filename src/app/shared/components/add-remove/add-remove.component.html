@@ -1,0 +1,10 @@
+<span
+  class="glyphicon glyphicon-plus-sign green pointer"
+  (click)="onPlus()"
+  [ngClass]="{ disabled: counter >= max }"
+></span>
+<span
+  class="glyphicon glyphicon-minus-sign red pointer"
+  (click)="onMinus()"
+  [ngClass]="{ disabled: counter <= min }"
+></span>
