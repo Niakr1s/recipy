@@ -1,10 +1,10 @@
 <app-recipe-info-view
-  *ngIf="!isEditing"
+  *ngIf="!stateService.recipePageState.isRecipeEditing"
   [recipe]="recipe"
   (startEdit$)="onStartEdit()"
 ></app-recipe-info-view>
 <app-recipe-info-edit
-  *ngIf="isEditing"
+  *ngIf="stateService.recipePageState.isRecipeEditing"
   [recipeEditableMembers]="{
     name: recipe.name,
     detail: recipe.detail,

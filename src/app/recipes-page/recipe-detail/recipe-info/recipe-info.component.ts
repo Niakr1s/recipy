@@ -1,5 +1,6 @@
-import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { EditableMembers, Recipe } from 'src/app/models/recipe.model';
+import { StateService } from 'src/app/shared/services/state.service';
 
 
 
@@ -8,29 +9,20 @@ import { EditableMembers, Recipe } from 'src/app/models/recipe.model';
   templateUrl: './recipe-info.component.html',
   styleUrls: ['./recipe-info.component.css']
 })
-export class RecipeInfoComponent implements OnInit, OnChanges {
+export class RecipeInfoComponent implements OnInit {
   @Input() recipe!: Recipe;
 
-  isEditing = false;
-
-  constructor() { }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    const recipe: SimpleChange = changes.recipe;
-    if (recipe && !recipe.firstChange) {
-      this.isEditing = false;
-    }
-  }
+  constructor(readonly stateService: StateService) { }
 
   ngOnInit(): void {
   }
 
   onStartEdit(): void {
-    this.isEditing = true;
+    this.stateService.recipePageState.isRecipeEditing = true;
   }
 
   onStopEdit(recipeEditableMembers: EditableMembers): void {
-    this.isEditing = false;
+    this.stateService.recipePageState.isRecipeEditing = false;
     this.recipe.apply(recipeEditableMembers);
   }
 }

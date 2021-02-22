@@ -15,11 +15,11 @@ export class RecipeListComponent implements OnInit {
   }
 
   selectRecipe(recipe: Recipe): void {
-    this.stateService.recipePageState.currentRecipe = recipe;
+    this.stateService.recipePageState.setCurrentRecipe(recipe);
   }
 
   onNewRecipe(): void {
     const newRecipe = this.recipesService.createNewRecipe();
-    this.stateService.recipePageState.currentRecipe = newRecipe;
+    this.stateService.recipePageState.setCurrentRecipeAndEdit(newRecipe);
   }
 }
