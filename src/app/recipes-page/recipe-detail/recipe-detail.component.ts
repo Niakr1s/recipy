@@ -8,8 +8,17 @@ import { Recipe } from '../../models/recipe.model';
   styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent implements OnInit {
-  @Input() recipe!: Recipe;
+  _recipe!: Recipe;
   isAddingNewIngridient = false;
+
+  @Input() set recipe(recipe: Recipe) {
+    this._recipe = recipe;
+    this.isAddingNewIngridient = false;
+  }
+
+  get recipe(): Recipe {
+    return this._recipe;
+  }
 
   constructor() { }
 
