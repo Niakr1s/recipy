@@ -5,17 +5,19 @@ export type Measurement = typeof Measurements[number];
 export type IngridientOptions = Pick<Ingridient, 'name' | 'amount' | 'measurement'>;
 
 export class Ingridient {
-  name: string;
-  amount: number;
-  measurement: Measurement;
+  name!: string;
+  amount!: number;
+  measurement!: Measurement;
 
   inCart = 0;
   private recipeId!: number;
 
-  constructor({ name, amount, measurement }: IngridientOptions) {
-    this.name = name;
-    this.amount = amount;
-    this.measurement = measurement;
+  static create({ name, amount, measurement }: IngridientOptions): Ingridient {
+    const ingridient = new Ingridient();
+    ingridient.name = name;
+    ingridient.amount = amount;
+    ingridient.measurement = measurement;
+    return ingridient;
   }
 
   apply({ name, amount, measurement }: IngridientOptions): void {

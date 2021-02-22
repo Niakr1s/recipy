@@ -18,7 +18,7 @@ export class RecipesService {
   }
 
   createNewRecipe(): Recipe {
-    const recipe = new Recipe({ name: 'New recipe', detail: 'Recipe detail', imagePath: '', ingridients: [] });
+    const recipe = Recipe.create({ name: 'New recipe', detail: 'Recipe detail', imagePath: '', ingridients: [] });
     this.recipies.push(recipe);
     return recipe;
   }

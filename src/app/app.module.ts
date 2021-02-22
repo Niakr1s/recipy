@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import 'reflect-metadata';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { IngridientListItemComponent } from './recipes-page/recipe-detail/ingridient-list/ingridient-list-item/ingridient-list-item.component';
@@ -18,7 +19,7 @@ import { AddRemoveComponent } from './shared/components/add-remove/add-remove.co
 import { InCartComponent } from './shared/components/in-cart/in-cart.component';
 import { IngridientInputComponent } from './shared/components/ingridient-input/ingridient-input.component';
 import { IngridientComponent } from './shared/components/ingridient/ingridient.component';
-import { RecipesSaverMockStorageService, RecipesSaverServiceInjectKey } from './shared/services/recipes-saver.service';
+import { RecipesSaverLocalStorageService, RecipesSaverServiceInjectKey } from './shared/services/recipes-saver.service';
 import { ShoppingListComponent } from './shopping-page/shopping-list/shopping-list.component';
 import { ShoppingComponent } from './shopping-page/shopping-page.component';
 
@@ -55,7 +56,7 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [{ provide: RecipesSaverServiceInjectKey, useClass: RecipesSaverMockStorageService }],
+  providers: [{ provide: RecipesSaverServiceInjectKey, useClass: RecipesSaverLocalStorageService }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
