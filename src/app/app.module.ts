@@ -8,18 +8,19 @@ import { IngridientListItemComponent } from './recipes-page/recipe-detail/ingrid
 import { IngridientListComponent } from './recipes-page/recipe-detail/ingridient-list/ingridient-list.component';
 import { NoRecipeDetailComponent } from './recipes-page/recipe-detail/no-recipe-detail/no-recipe-detail.component';
 import { RecipeDetailComponent } from './recipes-page/recipe-detail/recipe-detail.component';
+import { RecipeInfoEditComponent } from './recipes-page/recipe-detail/recipe-info/recipe-info-edit/recipe-info-edit.component';
+import { RecipeInfoViewComponent } from './recipes-page/recipe-detail/recipe-info/recipe-info-view/recipe-info-view.component';
+import { RecipeInfoComponent } from './recipes-page/recipe-detail/recipe-info/recipe-info.component';
 import { RecipeItemComponent } from './recipes-page/recipe-list/recipe-item/recipe-item.component';
 import { RecipeListComponent } from './recipes-page/recipe-list/recipe-list.component';
 import { RecipesComponent } from './recipes-page/recipes-page.component';
+import { AddRemoveComponent } from './shared/components/add-remove/add-remove.component';
+import { InCartComponent } from './shared/components/in-cart/in-cart.component';
 import { IngridientInputComponent } from './shared/components/ingridient-input/ingridient-input.component';
 import { IngridientComponent } from './shared/components/ingridient/ingridient.component';
+import { RecipesSaverMockStorageService, RecipesSaverServiceInjectKey } from './shared/services/recipes-saver.service';
 import { ShoppingListComponent } from './shopping-page/shopping-list/shopping-list.component';
 import { ShoppingComponent } from './shopping-page/shopping-page.component';
-import { RecipeInfoComponent } from './recipes-page/recipe-detail/recipe-info/recipe-info.component';
-import { RecipeInfoEditComponent } from './recipes-page/recipe-detail/recipe-info/recipe-info-edit/recipe-info-edit.component';
-import { RecipeInfoViewComponent } from './recipes-page/recipe-detail/recipe-info/recipe-info-view/recipe-info-view.component';
-import { InCartComponent } from './shared/components/in-cart/in-cart.component';
-import { AddRemoveComponent } from './shared/components/add-remove/add-remove.component';
 
 
 const appRoutes: Routes = [
@@ -54,7 +55,7 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [{ provide: RecipesSaverServiceInjectKey, useClass: RecipesSaverMockStorageService }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
