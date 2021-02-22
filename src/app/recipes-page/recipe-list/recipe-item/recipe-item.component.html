@@ -1,4 +1,11 @@
 <div>
+  <span
+    class="glyphicon glyphicon-minus-sign minus"
+    (click)="onDelete()"
+  ></span>
   <span>{{ recipe.name }}</span>
-  <img class="img-responsive img-rounded pull-right" [srcset]="recipe.imagePath"/>
+  <img
+    class="img-responsive img-rounded pull-right"
+    [srcset]="recipe.imagePath"
+  />
 </div>

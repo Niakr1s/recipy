@@ -1,9 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from 'src/app/models/recipe.model';
+import { RecipesService } from './recipes.service';
 
+@Injectable({
+  providedIn: 'root'
+})
 export class RecipePageState {
   currentRecipe?: Recipe;
   isRecipeEditing = false;
+
+  constructor(recipesService: RecipesService) {
+    recipesService.recipeDeleted$.subscribe((deletedRecipe) => {
+      if (this.currentRecipe === deletedRecipe) {
+        this.clearCurrentRecipe();
+      }
+    });
+  }
 
   setCurrentRecipe(recipe: Recipe): void {
     this.currentRecipe = recipe;
@@ -14,13 +26,16 @@ export class RecipePageState {
     this.currentRecipe = recipe;
     this.isRecipeEditing = true;
   }
+
+  clearCurrentRecipe(): void {
+    this.currentRecipe = undefined;
+    this.isRecipeEditing = false;
+  }
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class StateService {
-  readonly recipePageState = new RecipePageState();
-
-  constructor() { }
+  constructor(readonly recipePageState: RecipePageState) { }
 }

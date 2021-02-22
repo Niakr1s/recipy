@@ -5,3 +5,8 @@ div {
 img {
   max-height: 50px;
 }
+
+.minus {
+  color: red;
+  cursor: pointer;
+}
