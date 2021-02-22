@@ -17,4 +17,9 @@ export class RecipeListComponent implements OnInit {
   selectRecipe(recipe: Recipe): void {
     this.stateService.recipePageState.currentRecipe = recipe;
   }
+
+  onNewRecipe(): void {
+    const newRecipe = this.recipesService.createNewRecipe();
+    this.stateService.recipePageState.currentRecipe = newRecipe;
+  }
 }
