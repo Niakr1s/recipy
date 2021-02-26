@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RecipesService } from 'src/app/shared/services/recipes.service';
-import { recipeDetailQueryParams } from '../recipe-detail/recipe-info/queryParams';
+import { updateQueryParam } from 'src/shared/util/router';
+import { recipeDetailQueryParams } from '../queryParams';
 
 @Component({
   selector: 'app-recipe-list',
@@ -9,13 +10,20 @@ import { recipeDetailQueryParams } from '../recipe-detail/recipe-info/queryParam
   styleUrls: ['./recipe-list.component.css'],
 })
 export class RecipeListComponent implements OnInit {
+  isEditing = false;
+
   constructor(
     readonly recipesService: RecipesService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.queryParams.subscribe((queryParams) => {
+      this.isEditing =
+        queryParams[recipeDetailQueryParams.recipeListEdit] === 'true';
+    });
+  }
 
   onNewRecipe(): void {
     const newRecipe = this.recipesService.createNewRecipe();
@@ -23,5 +31,13 @@ export class RecipeListComponent implements OnInit {
       queryParams: { [recipeDetailQueryParams.recipeEdit]: true },
       relativeTo: this.route,
     });
+  }
+
+  toggleEdit(): void {
+    updateQueryParam(
+      this.router,
+      recipeDetailQueryParams.recipeListEdit,
+      !this.isEditing
+    );
   }
 }

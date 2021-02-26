@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IngridientOptions } from 'src/app/models/ingridient.model';
 import { Recipe } from 'src/app/models/recipe.model';
 import { updateQueryParam } from 'src/shared/util/router';
-import { recipeDetailQueryParams } from '../recipe-info/queryParams';
+import { recipeDetailQueryParams } from '../../queryParams';
 
 @Component({
   selector: 'app-ingridient-info[recipe]',

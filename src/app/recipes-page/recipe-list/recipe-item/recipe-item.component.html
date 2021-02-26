@@ -1,6 +1,7 @@
 <div>
   <span
     class="glyphicon glyphicon-minus-sign minus"
+    *ngIf="isEditing"
     (click)="onDelete()"
   ></span>
   <span>{{ recipe.name }}</span>

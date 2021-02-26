@@ -1,10 +1,18 @@
 <h2>
   <span> Recipe list </span>
-  <button
-    class="btn btn-default pull-right glyphicon glyphicon-plus"
-    title="New recipe"
-    (click)="onNewRecipe()"
-  ></button>
+  <span class="pull-right">
+    <span
+      class="btn btn-default-right glyphicon glyphicon-edit"
+      [ngClass]="{ red: isEditing }"
+      title="Edit recipes"
+      (click)="toggleEdit()"
+    ></span>
+    <span
+      class="btn btn-default-right glyphicon glyphicon-plus"
+      title="New recipe"
+      (click)="onNewRecipe()"
+    ></span>
+  </span>
 </h2>
 <ul class="list-group">
   <li
@@ -13,6 +21,9 @@
     [routerLink]="'' + recipe.id"
     routerLinkActive="selected"
   >
-    <app-recipe-item [recipe]="recipe"></app-recipe-item>
+    <app-recipe-item
+      [recipe]="recipe"
+      [isEditing]="isEditing"
+    ></app-recipe-item>
   </li>
 </ul>

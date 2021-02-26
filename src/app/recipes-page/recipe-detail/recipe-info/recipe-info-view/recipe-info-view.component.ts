@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Recipe } from 'src/app/models/recipe.model';
 import { updateQueryParam } from 'src/shared/util/router';
-import { recipeDetailQueryParams } from '../queryParams';
+import { recipeDetailQueryParams } from '../../../queryParams';
 
 @Component({
   selector: 'app-recipe-info-view[recipe]',

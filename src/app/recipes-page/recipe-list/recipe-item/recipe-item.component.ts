@@ -9,6 +9,7 @@ import { Recipe } from '../../../models/recipe.model';
 })
 export class RecipeItemComponent implements OnInit {
   @Input() recipe!: Recipe;
+  @Input() isEditing?: boolean;
 
   constructor(readonly recipesService: RecipesService) {}
 
