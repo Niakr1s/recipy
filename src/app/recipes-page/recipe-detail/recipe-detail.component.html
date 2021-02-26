@@ -1,18 +1,2 @@
 <app-recipe-info [recipe]="recipe"></app-recipe-info>
-
-<app-ingridient-list
-  [ingridients]="recipe.ingridients"
-  (removeIngridient)="recipe.removeIngridient($event)"
-></app-ingridient-list>
-
-<button
-  class="btn btn-default new-ingridient-label"
-  [disabled]="isAddingNewIngridient"
-  (click)="isAddingNewIngridient = true"
->
-  New ingridient
-</button>
-<app-ingridient-input
-  *ngIf="isAddingNewIngridient"
-  (ingridientOptionsSubmitted$)="onNewIngridientOptions($event)"
-></app-ingridient-input>
+<app-ingridient-info [recipe]="recipe"></app-ingridient-info>

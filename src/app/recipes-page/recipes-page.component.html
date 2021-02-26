@@ -4,13 +4,7 @@
       <app-recipe-list></app-recipe-list>
     </div>
     <div class="col-md-8">
-      <app-recipe-detail
-        *ngIf="stateService.recipePageState.currentRecipe; else noRecipe"
-        [recipe]="stateService.recipePageState.currentRecipe"
-      ></app-recipe-detail>
-      <ng-template #noRecipe>
-        <app-no-recipe-detail></app-no-recipe-detail>
-      </ng-template>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

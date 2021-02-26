@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col-md-8">
     <h2>
-      <span>Editing {{ recipeName }}</span>
+      <span>Editing {{ this.recipe.name }}</span>
       <button
         class="btn btn-default glyphicon glyphicon-save pull-right"
         title="Save recipe"
-        (click)="onStopEdit()"
+        (click)="onSave()"
       ></button>
     </h2>
     <input class="form-control" [(ngModel)]="recipeEditableMembers.name" />

@@ -1,30 +1,26 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { EditableMembers } from 'src/app/models/recipe.model';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { EditableMembers, Recipe } from 'src/app/models/recipe.model';
+import { updateQueryParam } from 'src/shared/util/router';
+import { recipeDetailQueryParams } from '../queryParams';
 
 @Component({
-  selector: 'app-recipe-info-edit[recipeEditableMembers]',
+  selector: 'app-recipe-info-edit[recipe]',
   templateUrl: './recipe-info-edit.component.html',
-  styleUrls: ['./recipe-info-edit.component.css']
+  styleUrls: ['./recipe-info-edit.component.css'],
 })
-export class RecipeInfoEditComponent implements OnInit, OnChanges {
-  @Input() recipeEditableMembers!: EditableMembers;
-  @Output() stopEdit$: EventEmitter<EditableMembers> = new EventEmitter();
-  recipeName!: string;
+export class RecipeInfoEditComponent implements OnInit {
+  @Input() recipe!: Recipe;
+  recipeEditableMembers!: EditableMembers;
 
-  constructor() { }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    const recipeEditableMembers = changes.recipeEditableMembers;
-    if (recipeEditableMembers) {
-      this.recipeName = recipeEditableMembers.currentValue.name;
-    }
-  }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-    console.log('RecipeInfoEditComponent');
+    this.recipeEditableMembers = { ...this.recipe };
   }
 
-  onStopEdit(): void {
-    this.stopEdit$.next(this.recipeEditableMembers);
+  onSave(): void {
+    this.recipe.apply(this.recipeEditableMembers);
+    updateQueryParam(this.router, recipeDetailQueryParams.recipeEdit, false);
   }
 }

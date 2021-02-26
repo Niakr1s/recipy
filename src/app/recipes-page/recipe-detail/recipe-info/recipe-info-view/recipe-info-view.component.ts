@@ -1,22 +1,22 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Recipe } from 'src/app/models/recipe.model';
+import { updateQueryParam } from 'src/shared/util/router';
+import { recipeDetailQueryParams } from '../queryParams';
 
 @Component({
   selector: 'app-recipe-info-view[recipe]',
   templateUrl: './recipe-info-view.component.html',
-  styleUrls: ['./recipe-info-view.component.css']
+  styleUrls: ['./recipe-info-view.component.css'],
 })
 export class RecipeInfoViewComponent implements OnInit {
   @Input() recipe!: Recipe;
-  @Output() startEdit$: EventEmitter<void> = new EventEmitter();
 
-  constructor() { }
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onStartEdit(): void {
-    this.startEdit$.next();
+    updateQueryParam(this.router, recipeDetailQueryParams.recipeEdit, true);
   }
-
 }

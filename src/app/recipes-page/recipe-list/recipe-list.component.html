@@ -10,10 +10,8 @@
   <li
     class="list-group-item"
     *ngFor="let recipe of recipesService.recipies"
-    [ngClass]="{
-      selected: stateService.recipePageState.currentRecipe === recipe
-    }"
-    (click)="selectRecipe(recipe)"
+    [routerLink]="'' + recipe.id"
+    routerLinkActive="selected"
   >
     <app-recipe-item [recipe]="recipe"></app-recipe-item>
   </li>
